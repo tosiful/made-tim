@@ -1,8 +1,6 @@
 pipeline TreeDataPipeline{
 
-    TreeDataExtractor -> TreeDataTextFileInterpreter;
-
-    TreeDataTextFileInterpreter
+   TreeDataExtractor -> TreeDataTextFileInterpreter
         -> TreeDataCSVInterpreter
         -> TreeColumnDeleter
         -> TreeDataTableInterpreter
@@ -19,7 +17,7 @@ block TreeDataTextFileInterpreter oftype TextFileInterpreter { }
 
 
 block TreeDataCSVInterpreter oftype CSVInterpreter {
-        enclosing: '"';
+        delimiter: ';';
     }
 
 
@@ -50,8 +48,8 @@ constraint FurthPrefix oftype RegexConstraint {
 
  block TreeDataTableInterpreter oftype TableInterpreter{
 
-        header:true;
-        columns:[
+        header: true;
+        columns: [
             "lfd_nr" oftype integer,
             "stadtteil" oftype StadtteilFurth,
             "standort" oftype text,
@@ -59,7 +57,6 @@ constraint FurthPrefix oftype RegexConstraint {
             "baumart_deutsch" oftype text,
             "id" oftype GeoPattern,            
             "baumfamilie" oftype text
-
         ];
 
 
