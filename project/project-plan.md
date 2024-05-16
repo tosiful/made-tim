@@ -11,24 +11,27 @@ How does the adoption of renewable energy sources correlate with reductions in C
 ## Description
 This project aims to explore the relationship between the adoption of renewable energy sources and reductions in CO2 emissions. By analyzing datasets from the European Data Portal and GitHub's awesome-public-datasets related to renewable energy adoption and CO2 emissions, the project seeks to identify trends, quantify the impact of renewable energy adoption on CO2 emissions, and propose strategies to further accelerate this transition.
 
-### Datasources:
-###Datasource 1: Renewable Energy Statistics:
+## Datasources:
+### Datasource 1: Renewable Energy Statistics:
 * URL: https://edgar.jrc.ec.europa.eu/dataset_ghg80
 * Data Type: CSV
 * Description: Provides statistics on renewable energy production, consumption, and capacity across European countries.
 
-## Datasources
-###Datasource 1: Renewable Energy Statistics:
-*URL: https://edgar.jrc.ec.europa.eu/dataset_ghg80
-*Data Type: CSV
-*Description: Provides statistics on renewable energy production, consumption, and capacity across European countries.
-
-###Datasource 2: Global Carbon Atlas
-*URL: https://github.com/AnshTanwar/Global-Data-on-Sustainable-Energy/blob/main/global-data-on-sustainable-energy%20(1).csv
-*Data Type: CSV
-*Description: Offers datasets related to CO2 emissions, including emissions by sector, country, and year.
+### Datasource 2: Global Carbon Atlas
+* URL: https://github.com/AnshTanwar/Global-Data-on-Sustainable-Energy/blob/main/global-data-on-sustainable-energy%20(1).csv
+* Data Type: CSV
+* Description: Offers datasets related to CO2 emissions, including emissions by sector, country, and year.
 
 
 ## Work Packages
 
 <!-- List of work packages ordered sequentially-->
+1. Preparation: Define objectives, stakeholders, and tools.
+2. Data Collection: Retrieve and clean datasets.
+3. EDA: Analyze trends and visualize data.
+4. Correlation Analysis: Study relationships between variables.
+5. Barrier Identification: Research obstacles to adoption.
+6. Strategies Proposal: Suggest solutions and prioritize.
+7. Impact Assessment: Evaluate effectiveness and benefits.
+8. Reporting: Compile findings and present recommendations.
+9. Project Review: Assess outcomes and lessons learned.
