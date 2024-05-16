@@ -15,15 +15,14 @@ This project aims to explore the relationship between the adoption of renewable 
 
 ## Datasources
 ###Datasource 1: Renewable Energy Statistics:
-Metadata URL: https://edgar.jrc.ec.europa.eu/dataset_ghg80
-Data Type: CSV
-Description: Provides statistics on renewable energy production, consumption, and capacity across European countries.
+*URL: https://edgar.jrc.ec.europa.eu/dataset_ghg80
+*Data Type: CSV
+*Description: Provides statistics on renewable energy production, consumption, and capacity across European countries.
 
-###Datasource 2:GitHub's Awesome Public Datasets:
-Datasource 2: Global Carbon Atlas
-URL: https://github.com/AnshTanwar/Global-Data-on-Sustainable-Energy/blob/main/global-data-on-sustainable-energy%20(1).csv
-Data Type: CSV
-Description: Offers datasets related to CO2 emissions, including emissions by sector, country, and year.
+###Datasource 2: Global Carbon Atlas
+*URL: https://github.com/AnshTanwar/Global-Data-on-Sustainable-Energy/blob/main/global-data-on-sustainable-energy%20(1).csv
+*Data Type: CSV
+*Description: Offers datasets related to CO2 emissions, including emissions by sector, country, and year.
 
 
 ## Work Packages
