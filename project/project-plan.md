@@ -21,7 +21,6 @@ This study aims to investigate the relationship between CO2 emissions and rainfa
 * Description: Historical records of rainfall measurements, typically recorded in millimeters (mm) or liters per square meter (L/m²).
 
 ## Work Packages
-
 <!-- List of work packages ordered sequentially-->
 1. Preparation: Define objectives, stakeholders, and tools.
 2. Data Collection: Retrieve and clean datasets.
