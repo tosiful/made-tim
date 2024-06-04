@@ -4,7 +4,7 @@
 Analysis of CO2 Emissions and the Impact of Rainfall in Konstanz City
 
 ## Main Question
-How does rainfall impact CO2 emissions in Konstanz City?
+How do CO2 emissions impact rainfall patterns in Konstanz City?
 
 ## Description
 This study aims to investigate the relationship between CO2 emissions and rainfall patterns in Konstanz City. By analyzing historical data on CO2 emissions and rainfall over a specific time period, the project seeks to elucidate how variations in rainfall affect CO2 emissions and vice versa. Understanding this relationship is crucial for assessing the environmental dynamics of the city, identifying potential drivers of CO2 emissions, and informing sustainable urban planning and climate change mitigation strategies..
