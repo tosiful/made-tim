@@ -1,7 +1,7 @@
 # Project Plan
 
 ## Title
-Analysis of CO2 Emissions and the Impact of Rainfall in Konstanz City
+Analysis of CO2 Emissions and the Impact of Rainfall in Konstanz City 
 
 ## Main Question
 How do CO2 emissions impact rainfall patterns in Konstanz City?
