@@ -11,7 +11,7 @@ This study aims to investigate the relationship between CO2 emissions and rainfa
 
 ## Datasources:
 ### Datasource 1: CO2 Emissions Data:
-* URL: [https://edgar.jrc.ec.europa.eu/dataset_ghg80](https://offenedaten-konstanz.de/sites/default/files/Quellenbezogene_CO2_Emissionen_2010-2017_nach_Sektoren_0.csv)
+* URL: https://offenedaten-konstanz.de/sites/default/files/Quellenbezogene_CO2_Emissionen_2010-2017_nach_Sektoren_0.csv
 * Data Type: CSV
 * Description:  Historical records of CO2 emissions, categorized by sector (e.g., transportation, industry, residential).
   
