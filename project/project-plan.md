@@ -1,27 +1,24 @@
 # Project Plan
 
 ## Title
- Renewable Energy Adoption and CO2 Emissions Reduction
+Analysis of CO2 Emissions and the Impact of Rainfall in Konstanz City
 
 ## Main Question
-How does the adoption of renewable energy sources correlate with reductions in CO2 emissions, and what strategies can be implemented to further accelerate this transition?
-
-
+How does rainfall impact CO2 emissions in Konstanz City?
 
 ## Description
-This project aims to explore the relationship between the adoption of renewable energy sources and reductions in CO2 emissions. By analyzing datasets from the European Data Portal and GitHub's awesome-public-datasets related to renewable energy adoption and CO2 emissions, the project seeks to identify trends, quantify the impact of renewable energy adoption on CO2 emissions, and propose strategies to further accelerate this transition.
+This study aims to investigate the relationship between CO2 emissions and rainfall patterns in Konstanz City. By analyzing historical data on CO2 emissions and rainfall over a specific time period, the project seeks to elucidate how variations in rainfall affect CO2 emissions and vice versa. Understanding this relationship is crucial for assessing the environmental dynamics of the city, identifying potential drivers of CO2 emissions, and informing sustainable urban planning and climate change mitigation strategies..
 
 ## Datasources:
-### Datasource 1: Renewable Energy Statistics:
-* URL: https://edgar.jrc.ec.europa.eu/dataset_ghg80
+### Datasource 1: CO2 Emissions Data:
+* URL: [https://edgar.jrc.ec.europa.eu/dataset_ghg80](https://offenedaten-konstanz.de/sites/default/files/Quellenbezogene_CO2_Emissionen_2010-2017_nach_Sektoren_0.csv)
 * Data Type: CSV
-* Description: Provides statistics on renewable energy production, consumption, and capacity across European countries.
-
+* Description:  Historical records of CO2 emissions, categorized by sector (e.g., transportation, industry, residential).
+  
 ### Datasource 2: Global Carbon Atlas
-* URL: https://github.com/AnshTanwar/Global-Data-on-Sustainable-Energy/blob/main/global-data-on-sustainable-energy%20(1).csv
+* URL: https://offenedaten-konstanz.de/node/40911/download
 * Data Type: CSV
-* Description: Offers datasets related to CO2 emissions, including emissions by sector, country, and year.
-
+* Description: Historical records of rainfall measurements, typically recorded in millimeters (mm) or liters per square meter (L/m²).
 
 ## Work Packages
 
