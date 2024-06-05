@@ -31,7 +31,7 @@ pipeline GoodsTransportPipeline {
                  column AP, column AQ, column AR, column AS];
     }
 
-    // Created SQLite table
+    // Created SQLite tables
     block GoodsTransportTableInterpreter oftype TableInterpreter {
         header: false;
         columns: [
