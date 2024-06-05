@@ -1,0 +1,89 @@
+pipeline GoodsTransportPipeline {
+   
+    // define the blocks 
+    block GoodsTransportHttpExtractor oftype HttpExtractor {
+        url: "https://www-genesis.destatis.de/genesis/downloads/00/tables/46131-0014_00.csv";
+    }
+
+    // Encoding to handle German Umlauts
+    block GoodsTransportTextFileInterpreter oftype TextFileInterpreter {
+        encoding: "latin3";
+    }
+
+    // Delimiter (;)  used for Csv file
+    block GoodsTransportCSVInterpreter oftype CSVInterpreter { 
+        delimiter: ";";
+    }
+
+    //  rows deletion from 1 to 8 
+    block GoodsTransportRowsDeleter oftype RowDeleter {
+        delete: [row 1, row 2, row 3, row 4, row 5, row 6, row 7, row 8];
+    }
+
+    // Columns deletion from F to AS
+    block GoodsTransportColumnDeleter oftype ColumnDeleter {
+        delete: [column F, column G, column H, column I, column J, column K,
+                 column L, column M, column N, column O, column P, column Q,
+                 column R, column S, column T, column U, column V, column W,
+                 column X, column Y, column Z, column AA, column AB, column AC,
+                 column AD, column AE, column AF, column AG, column AH, column AI,
+                 column AJ, column AK, column AL, column AM, column AN, column AO,
+                 column AP, column AQ, column AR, column AS];
+    }
+
+    // Created SQLite table
+    block GoodsTransportTableInterpreter oftype TableInterpreter {
+        header: false;
+        columns: [
+    
+            "year" oftype PositiveInteger,
+            "month" oftype ValidMonths,
+            "goods_id" oftype OnlyValidIds,
+            "goods_name" oftype text,
+            "goods_source" oftype text,
+            "abroad" oftype PositiveInteger,
+            "total" oftype PositiveInteger,
+        ];
+    }
+
+    // Created SQLite file 
+    block GoodsTransportSQLiteLoader oftype SQLiteLoader {
+        table: "goods";
+        file: "./goodsTransportedByTrain.sqlite";
+    }
+
+    valuetype ValidMonths oftype text {
+        constraints: [
+            OnlyValidMonthList,
+        ];
+    }
+
+    valuetype OnlyValidIds oftype text {
+        constraints: [
+            OnlyValidIdsList,
+        ];
+    }
+
+    valuetype PositiveInteger oftype integer {
+        constraints: [
+            OnlyValidNumbers,
+        ];
+    }
+
+    // Month column exclusively comprises month names in German
+    constraint OnlyValidMonthList on text:
+        value in ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+
+    
+    constraint OnlyValidNumbers on integer:
+        value >= 0;
+
+    //  goods_id column only contains values in the format of NST7-XXX.
+    constraint OnlyValidIdsList on text:
+       value matches /^NST7-[A-Z0-9]{3}$/;
+       
+
+ 
+    GoodsTransportHttpExtractor-> GoodsTransportTextFileInterpreter-> GoodsTransportCSVInterpreter-> GoodsTransportRowsDeleter;
+    GoodsTransportRowsDeleter-> GoodsTransportColumnDeleter-> GoodsTransportTableInterpreter-> GoodsTransportSQLiteLoader;
+}
