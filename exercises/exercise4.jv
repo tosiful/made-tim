@@ -1,0 +1,87 @@
+// Pipeline
+
+pipeline TemperaturesPipeline {
+    Http -> Zip ->Temperature -> Text ->CSV 
+    -> ColumnRenamer -> ColumnRenamer2 -> ColumnDeleter ->
+    TemperatureTableInterpreter -> TemperaturTransformer -> BatteriTransformer -> 
+    TemperatureLoader;
+
+    block Http oftype HttpExtractor {
+        url : "https://www.mowesta.com/data/measure/mowesta-dataset-20221107.zip";
+    }
+
+    
+    block Zip oftype ArchiveInterpreter {
+        archiveType : "zip";
+    }
+
+    
+    block Temperature oftype FilePicker  {
+        path : "/data.csv";
+    }
+
+    block Text oftype TextFileInterpreter {
+    }
+
+    block CSV oftype CSVInterpreter {
+        delimiter: ";";
+    }
+
+    block ColumnRenamer oftype CellWriter {
+        at: range A1:E1;
+        write : ["id", "producer", "model", "month", "temperature"];
+    }
+
+    block ColumnRenamer2 oftype CellWriter {
+        at: cell J1;
+        write : ["battery_temperature"];
+    }
+
+
+    block ColumnDeleter oftype ColumnDeleter {
+        delete : [column F, column G, column H, column I];
+    }
+
+
+    block TemperatureTableInterpreter oftype TableInterpreter {
+        header: false;
+        columns: [
+            "id" oftype PositiveValueType,
+            "producer" oftype text,
+            "model" oftype text,
+            "month" oftype PositiveValueType,
+            "temperature" oftype decimal,
+            "battery_temperature" oftype decimal,
+        ];
+    }
+
+    block TemperaturTransformer oftype TableTransformer {
+        inputColumns : ["temperature"];
+        outputColumn : "temperature";
+        use : celsius_to_fahr;
+    }
+
+    block BatteriTransformer oftype TableTransformer {
+        inputColumns : ["battery_temperature"];
+        outputColumn : "battery_temperature";
+        use : celsius_to_fahr;
+    }
+
+    block TemperatureLoader oftype SQLiteLoader {
+        table: 'temperatures';
+        file: 'temperatures.sqlite';
+    }
+
+    transform celsius_to_fahr {
+        from Celsius oftype decimal;
+        to Fahrenheit oftype decimal;
+        Fahrenheit: (Celsius * 9/5) + 32;
+ }
+}
+
+valuetype PositiveValueType oftype integer {
+    constraints : [ PositiveValueConstraint ];
+}
+
+constraint PositiveValueConstraint on integer :
+    value >= 0;
