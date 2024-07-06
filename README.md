@@ -1,3 +1,17 @@
+# Analysis of CO2 Emissions and the Impact of Rainfall in Konstanz City
+
+## Description
+
+This project investigates the relationship between CO2 emissions and rainfall patterns in Konstanz City from 2010 to 2017. By analyzing historical data, the study aims to understand how CO2 emissions impact rainfall patterns. The findings will help inform sustainable urban planning and climate change mitigation strategies, ensuring a better environmental future for the city.
+
+### Features
+
+- Detailed analysis of CO2 emissions data from 2010 to 2017.
+- Examination of rainfall patterns over the same period.
+- Correlation analysis to identify potential relationships between emissions and rainfall.
+- Insights into urban environmental dynamics and implications for urban planning.
+
+
 # Exercise Badges
 
 ![](https://byob.yarr.is/tosiful/made-tim/score_ex1) ![](https://byob.yarr.is/tosiful/made-tim/score_ex2) ![](https://byob.yarr.is/tosiful/made-tim/score_ex3) ![](https://byob.yarr.is/tosiful/made-tim/score_ex4) ![](https://byob.yarr.is/tosiful/made-tim/score_ex5)
